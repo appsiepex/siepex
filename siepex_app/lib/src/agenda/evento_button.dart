@@ -37,7 +37,7 @@ class _EventoButtonState extends State<EventoButton> {
                                     image: new NetworkImage(
                                         "https://avatars1.githubusercontent.com/u/29609021?s=400&u=24a2c965697b52e2697feb03ec808aa9b1b32443&v=4")))),
                         Text(
-                          'Autor da palestra',
+                          'Autor da palestras',
                           textAlign: TextAlign.center,
                         )
                       ],
@@ -47,7 +47,7 @@ class _EventoButtonState extends State<EventoButton> {
                   child: Container(
                       margin: EdgeInsets.only(top: 0),
                       child: ListTile(
-                        title: Text('Uma palestra bacana e complexa'),
+                        title: Text('Uma palestras bacana e complexa'),
                         subtitle: Text('00:00-00:30\nPalco tal'),
                       )),
                 )

@@ -42,7 +42,7 @@ tbl_minicursos.belongsToMany(participante, {
 router.get('/', (req, res) => {
     tbl_minicursos.findAll({
         order: [
-            ['inicio', 'ASC'],
+            ['hr_inicio', 'ASC'],
         ],
     }).then((result) => {
         res.json(result)
@@ -64,7 +64,7 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
     tbl_minicursos.findByPk(req.params.id, {
-        include: [participante]
+        include: [participantes]
     }).then((result) => {
         res.json(result)
     }).catch((err) => {
@@ -74,7 +74,7 @@ router.get('/:id', (req, res) => {
 });
 router.get('/:id', (req, res) => {
     tbl_visitas.findByPk(req.params.id, {
-        include: [participante]
+        include: [participantes]
     }).then((result) => {
         res.json(result)
     }).catch((err) => {
@@ -86,7 +86,7 @@ router.get('/:id/participantes', (req, res) => {
     tbl_minicursos.findByPk(req.params.id, {
         attributes: [],
         include: [{
-            model: participante, attributes: ['nome', 'cpf'], through: {
+            model: participantes, attributes: ['nome', 'cpf'], through: {
                 attributes: []
             }
         }]

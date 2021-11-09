@@ -21,7 +21,7 @@ class _ListagemVisitasState extends State<ListagemVisitas> {
   bool carregou = false;
   getTodasVisitas() async {
     try {
-      var visitas = jsonDecode((await http.get(baseUrl + "visitas")).body);
+      var visitas = jsonDecode((await http.get(Uri.parse(baseUrl + "visitas"))).body);
       print(visitas);
       print(visitas.runtimeType);
       setState(() {
@@ -40,7 +40,7 @@ class _ListagemVisitasState extends State<ListagemVisitas> {
     Participante.getStorage().then((user) async {
       try {
         var visitas = jsonDecode(
-            (await http.get(baseUrl + "participante/${user.id}/visitas")).body);
+            (await http.get(Uri.parse(baseUrl + "participante/${user.id}/visitas"))).body);
         setState(() {
           print(visitas);
           viewVisitas = visitas['tbl_visitas'];

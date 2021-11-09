@@ -16,7 +16,7 @@ class GeralCard extends StatelessWidget {
           },
           child: Card(
             margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            color: Color(0xff249FAB),
+            color: Color(0xFF006133),
             elevation: 10,
             child: Container(
               padding: EdgeInsets.all(20),
@@ -43,9 +43,17 @@ class GeralCard extends StatelessWidget {
                     child: Container(
                         margin: EdgeInsets.only(top: 0),
                         child: ListTile(
-                          title: Text(geral.programacao),
+                          title: Text(geral.programacao,
+                            style: TextStyle(
+                              color:Colors.white,
+                            ),
+                          ),
                           subtitle: Text(
-                              '${geral.inicio.substring(0, 5)}-${geral.fim.substring(0, 5)}\nLocal:${geral.localizacao}'),
+                              '${geral.inicio.substring(0, 5)}-${geral.fim.substring(0, 5)}\nLocal:${geral.localizacao}',
+                            style: TextStyle(
+                              color:Colors.white,
+                            ),
+                          ),
                         )),
                   )
                 ],

@@ -10,7 +10,7 @@ class TrabalhosPage extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            title: Text('Trabalhos '),
+            title: Text('Podcast'),
             bottom: tabs(),
           ),
           body: Container(

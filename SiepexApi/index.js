@@ -13,6 +13,17 @@ const express = require('express'),
   cadastra_equipe_rotas = require("./src/eventos/cadastraEquipe.js"),
   obtem_equipes_rotas = require("./src/eventos/obterEquipes.js"),
   atualiza_participante_rotas = require("./src/eventos/atualizaParticipante.js"),
+  oficina_rotas = require("./src/eventos/oficina.js"),
+  palestras_rotas = require("./src/eventos/palestras.js"),
+  rodas_rotas = require("./src/eventos/rodas.js"),
+  mostra_rotas = require("./src/eventos/mostra.js"),
+  forum_rotas = require("./src/eventos/forum.js"),
+  seminario_rotas = require("./src/eventos/seminario.js"),
+  videocirco_rotas = require("./src/eventos/videocirco.js"),
+  circodanca_rotas = require("./src/eventos/circodanca.js"),
+  teatro_rotas = require("./src/eventos/teatro.js"),
+  musica_rotas = require("./src/eventos/musica.js"),
+  danca_rotas = require("./src/eventos/danca.js"),
   jogos_rotas = require("./src/eventos/jogos.js"),
   bodyParser = require('body-parser');
 
@@ -49,6 +60,17 @@ app.use("/modalidades", obtem_modalidades_rotas);
 app.use("/equipe", cadastra_equipe_rotas);
 app.use('/obtemEquipes', obtem_equipes_rotas);
 app.use('/atualizaParticipante', atualiza_participante_rotas);
+app.use('/oficina', oficina_rotas);
+app.use('/palestras', palestras_rotas);
+app.use('/rodas', rodas_rotas);
+app.use('/mostra', mostra_rotas);
+app.use('/forum', forum_rotas);
+app.use('/seminario', seminario_rotas);
+app.use('/videocirco', videocirco_rotas);
+app.use('/circodanca', circodanca_rotas);
+app.use('/teatro', teatro_rotas);
+app.use('/musica', musica_rotas);
+app.use('/danca', danca_rotas);
 app.use('/jogos', jogos_rotas);
 app.get('/', function (req, res) {
   res.json("the server is on")

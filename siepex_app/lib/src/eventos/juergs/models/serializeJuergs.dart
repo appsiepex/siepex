@@ -151,7 +151,7 @@ class Estudante {
 
   static Future<List<Estudante>> pegarJuizes() async {
     try{
-      http.Response res = await http.get(baseUrl + 'obtemParticipante/juizes');
+      http.Response res = await http.get(Uri.parse(baseUrl + 'obtemParticipante/juizes'));
       var json = jsonDecode(res.body);
       if(json['status'] == 'sucesso'){
         List<Estudante> juizes = [];

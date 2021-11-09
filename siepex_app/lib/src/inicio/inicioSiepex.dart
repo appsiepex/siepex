@@ -30,11 +30,11 @@ Widget corpo(BuildContext context) {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   width: double.infinity,
-                  child: Image.asset(
-                      'assets/img/arte_uergs/imagem-cabecalho-uergs-siepex-inove.png'),
+                  //child: Image.asset(
+                      //'assets/img/arte_uergs/imagem-cabecalho-uergs-siepex-inove.png'),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.all(100),
                 ),
                 Row(
                   children: <Widget>[
@@ -60,10 +60,10 @@ Widget corpo(BuildContext context) {
                 Padding(
                   padding: EdgeInsets.all(15),
                 ),
-                Row(
+                /*Row(
                   children: <Widget>[
                     itemButton(
-                        new GridItem('Hoteis', 'hoteis', Icons.map), context,
+                       new GridItem('Hoteis', 'hoteis', Icons.map), context,
                         expanded: false),
                     itemButton(
                         new GridItem(
@@ -76,7 +76,7 @@ Widget corpo(BuildContext context) {
                         context,
                         expanded: false)
                   ],
-                ),
+                ),*/ // ICONES "HOTEIS", "RESTAURANTES" E " INFORMAÇÕES UTEIS" NA TELA DE INICIO DO SIEPEX
                 Padding(
                   padding: EdgeInsets.all(15),
                 ),
@@ -92,11 +92,11 @@ Widget corpo(BuildContext context) {
                             Icons.assignment_ind),
                         context,
                         expanded: false),
-                    itemButton(
+                    /*itemButton(
                         new GridItem(
                             'Mapa do evento', 'MapaEvento', Mdi.map_marker),
                         context,
-                        expanded: false)
+                        expanded: false)*/ // ICONE "MAPA DO EVENTO"
                   ],
                 ),
               ],

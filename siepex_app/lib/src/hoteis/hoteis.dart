@@ -19,3 +19,4 @@ class HoteisPage extends StatelessWidget {
     );
   }
 }
+//FUNÇÃO HOTEIS TEMPORARIAMENTE DESABILITADA PARA O DECIMO SIEPEX - EVENTO VIRTUAL

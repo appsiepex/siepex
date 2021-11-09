@@ -12,24 +12,24 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(200),
       allowNull: true
     },
-    palestrante: {
+    palestrantes: {
       type: DataTypes.STRING(100),
       allowNull: true
     },
-    inicio: {
+    hr_inicio: {
       type: DataTypes.STRING(45),
       allowNull: true
     },
-    fim: {
+    hr_fim: {
       type: DataTypes.STRING(45),
       allowNull: true
     },
-    vagas: {
+    lmt_vagas: {
       type: DataTypes.INTEGER(11),
       allowNull: true,
       defaultValue: '40'
     },
-    predio: {
+    /*predio: {
       type: DataTypes.STRING(100),
       allowNull: true
     },
@@ -40,8 +40,9 @@ module.exports = function(sequelize, DataTypes) {
     obs: {
       type: DataTypes.STRING(150),
       allowNull: true
-    }
-  }, {
+    }*/
+  }, 
+  {
     tableName: 'tbl_minicursos'
   });
 };

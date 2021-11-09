@@ -20,3 +20,4 @@ class RestaurantesPage extends StatelessWidget {
     );
   }
 }
+//FUNÇÃO RESTAURANTES TEMPORARIAMENTE DESABILITADA PARA O DECIMO SIEPEX - EVENTO VIRTUAL

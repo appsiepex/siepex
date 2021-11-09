@@ -22,7 +22,7 @@ class _ListagemTrabalhosState extends State<ListagemTrabalhos> {
   bool carregou = false;
   getGeral() async {
     try {
-      var trabalhos = jsonDecode((await http.get(baseUrl + "trabalhos")).body);
+      var trabalhos = jsonDecode((await http.get(Uri.parse(baseUrl + "trabalhos"))).body);
       setState(() {
         viewTrabalhos = trabalhos;
       });

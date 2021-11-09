@@ -24,3 +24,4 @@ class MapaEventoPage extends StatelessWidget {
     );
   }
 }
+//FUNÇÃO MAPA DO EVENTO TEMPORARIAMENTE DESABILITADA PARA O DECIMO SIEPEX - EVENTO VIRTUAL

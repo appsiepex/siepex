@@ -349,7 +349,7 @@ class _CadastraParticipanteState extends State<PerfilParticipante> {
         _loading = true;
       });
       var resposta =
-          jsonDecode((await http.put(baseUrl + 'atualizaParticipante/', body: {
+          jsonDecode((await http.put(Uri.parse(baseUrl + 'atualizaParticipante/'), body: {
         'nome': estudante.nome,
         'cpf': estudante.cpf,
         'email': estudante.email,

@@ -15,6 +15,7 @@ class InicioPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           elevation: 10,
+          toolbarHeight: 60,
           centerTitle: true,
           title: Text('Eventos UERGS'),
         ),

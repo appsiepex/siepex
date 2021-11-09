@@ -89,7 +89,7 @@ class Jogo {
         return userJuergs.minhasEquipes[index].id;
         });
       
-      var resposta = jsonDecode((await http.put(baseUrl + 'modalidades/pegarJogos/porEquipes', 
+      var resposta = jsonDecode((await http.put(Uri.parse(baseUrl + 'modalidades/pegarJogos/porEquipes'),
       body: {
         'id_equipes': json.encode(idEquipes),
       })).body);
@@ -114,8 +114,8 @@ class Jogo {
 
   static Future<List<Jogo>> pegarJogosPorEquipe(BuildContext context, int idEquipe) async {
     try {
-      var resposta = jsonDecode((await http.put(
-        baseUrl + 'modalidades/pegarJogos/porTime',
+      var resposta = jsonDecode((await http.put(Uri.parse(
+        baseUrl + 'modalidades/pegarJogos/porTime'),
         body: {
           'id_equipe': idEquipe.toString()
         }
@@ -143,7 +143,7 @@ class Jogo {
 
   static Future<List<Jogo>> pegaJogoPorFase(BuildContext context, Modalidade modalidade, int fase) async {
     try{
-      var resposta = jsonDecode((await http.put(baseUrl + 'modalidades/listaTabela', 
+      var resposta = jsonDecode((await http.put(Uri.parse(baseUrl + 'modalidades/listaTabela'),
       body: {
         'idModalidade': modalidade.id.toString(),
         'etapa':fase.toString(),
@@ -169,7 +169,7 @@ class Jogo {
 
   static Future<List<Jogo>> pegarJogosPorModalidade(int idModalidade) async {
     try{
-      http.Response res = await http.get(baseUrl + 'modalidades/pegarJogos/porModalidade/$idModalidade');
+      http.Response res = await http.get(Uri.parse(baseUrl + 'modalidades/pegarJogos/porModalidade/$idModalidade'));
       var json = jsonDecode(res.body);
       if(json['status'] == 'sucesso'){
         List<Jogo> jogos = [];
@@ -189,7 +189,7 @@ class Jogo {
 
   Future<bool> atualizaLocalJogo(BuildContext context, String nomeLocal) async {
     try{
-      http.Response res = await http.put(baseUrl + 'modalidades/atualizaLocalJogo/$idJogo/$nomeLocal');
+      http.Response res = await http.put(Uri.parse(baseUrl + 'modalidades/atualizaLocalJogo/$idJogo/$nomeLocal'));
       var json = jsonDecode(res.body);
       if(json['status'] == 'sucesso'){
         return true;
@@ -215,7 +215,7 @@ class Jogo {
     if (jogosJson.length > 0) {
       try {
         var resposta =
-          jsonDecode((await http.put(baseUrl + 'modalidades/atualizaJogos', body: {
+          jsonDecode((await http.put(Uri.parse(baseUrl + 'modalidades/atualizaJogos'), body: {
         'jogos': json.encode(jogosJson),
       }))
               .body);
@@ -235,7 +235,7 @@ class Jogo {
 
   Future<bool> alterarJuiz(String nomeJuiz) async {
     try{
-      http.Response res = await http.put(baseUrl + 'jogos/alterarJuiz/$idJogo/$nomeJuiz');
+      http.Response res = await http.put(Uri.parse(baseUrl + 'jogos/alterarJuiz/$idJogo/$nomeJuiz'));
       var json = jsonDecode(res.body);
       if(json['status'] == 'sucesso'){
         return true;

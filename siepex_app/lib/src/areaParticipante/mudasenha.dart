@@ -153,7 +153,7 @@ class MudaSenhaPage extends StatelessWidget {
       }
 
       var resposta = jsonDecode((await http.put(
-              baseUrl + "participante/" + participante.id,
+              Uri.parse(baseUrl + "participante/" + participante.id),
               body: {"senha": senha}))
           .body);
       print(resposta);

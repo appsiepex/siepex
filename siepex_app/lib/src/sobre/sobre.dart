@@ -20,10 +20,13 @@ class SobrePage extends StatelessWidget {
                     fit: BoxFit.fill)),
             child: ListView(
               children: <Widget>[
-                Image.asset(
+                /*Image.asset(
                   'assets/img/arte_uergs/Logo-Siepex-sobre.png',
                   fit: BoxFit.cover,
                   // width: 20,
+                ),*/
+                Padding(
+                  padding: EdgeInsets.all(130),
                 ),
                 AnnotatedRegion<SystemUiOverlayStyle>(
                     value: SystemUiOverlayStyle.dark,
@@ -36,7 +39,10 @@ class SobrePage extends StatelessWidget {
                 ListTile(
                     title: Text.rich(TextSpan(
                         text:
-                            """O Siepex é um espaço de divulgação dos projetos de Iniciação Científica, de Iniciação Tecnológica e Inovação, de Ensino e de Extensão. Podem participar e apresentar suas produções os estudantes de graduação e de pós-graduação da Uergs e de outras instituições de Ensino Superior. """))),
+                            """O Siepex é um espaço de divulgação dos projetos de Iniciação Científica, de Iniciação Tecnológica e Inovação, de Ensino e de Extensão. Podem participar e apresentar suas produções os estudantes de graduação e de pós-graduação da Uergs e de outras instituições de Ensino Superior.
+
+Com o tema “Conexão Ciência”, a  10ª edição do Salão Integrado de Ensino, Pesquisa e Extensão (Siepex) da Uergs ocorrerá de 18 a 30 de novembro de 2021, em ambientes virtuais. A programação traz inovações para adaptar-se ao formato remoto de realização das apresentações de trabalhos, minicursos e oficinas, além de eventos paralelos e atividades artísticas e culturais. 
+"""))),
               ],
             )));
   }

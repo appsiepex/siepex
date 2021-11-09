@@ -152,9 +152,9 @@ class VisitasDetalhes extends StatelessWidget {
                                     ).show();
                                     return;
                                   }
-                                  http.put(
+                                  http.put(Uri.parse(
                                       baseUrl +
-                                          "visitas/${visita.idVisitas}/cadastrar",
+                                          "visitas/${visita.idVisitas}/cadastrar"),
                                       body: {
                                         "id_participante": participante.id
                                       }).then((respostaRaw) {
@@ -240,9 +240,9 @@ class VisitasDetalhes extends StatelessWidget {
                               onPressed: () {
                                 Participante.getStorage().then((participante) {
                                   http
-                                      .delete(
+                                      .delete(Uri.parse(
                                     baseUrl +
-                                        "visitas/${visita.idVisitas}/liberar/${participante.id}",
+                                        "visitas/${visita.idVisitas}/liberar/${participante.id}"),
                                   )
                                       .then((respostaRaw) {
                                     print(respostaRaw.body);

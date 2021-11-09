@@ -63,7 +63,7 @@ class _LoginJuergsState extends State<LoginJuergs> {
           _isLoading = true;
         });
         var resposta = jsonDecode(
-            (await http.put(baseUrl + 'obtemParticipante/', body: {'cpf': cpf}))
+            (await http.put(Uri.parse(baseUrl + 'obtemParticipante/'), body: {'cpf': cpf}))
                 .body);
         if (resposta['status'] != null) {
           if (resposta['status'] == 'ok') {

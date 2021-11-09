@@ -75,7 +75,7 @@ class MinicursoDetalhes extends StatelessWidget {
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
                       subtitle: Text(
-                        minicurso.palestrante,
+                        minicurso.palestrantes,
                         style: TextStyle(fontSize: 15),
                       ),
                     ),
@@ -90,7 +90,7 @@ class MinicursoDetalhes extends StatelessWidget {
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
                       subtitle: Text(
-                        "${minicurso.inicio}-${minicurso.fim}",
+                        "${minicurso.hr_inicio}-${minicurso.hr_fim}",
                         style: TextStyle(fontSize: 15),
                       ),
                     ),
@@ -105,7 +105,7 @@ class MinicursoDetalhes extends StatelessWidget {
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
                       subtitle: Text(
-                        "${minicurso.vagas}",
+                        "${minicurso.lmt_vagas}",
                         style: TextStyle(fontSize: 15),
                       ),
                     ),
@@ -148,8 +148,8 @@ class MinicursoDetalhes extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(30)),
                               color: Color(0xff2595A6),
                               onPressed: () {
-                                Participante.getStorage().then((participante) {
-                                  if (participante == false) {
+                                Participante.getStorage().then((participantes) {
+                                  if (participantes == false) {
                                     Alert(
                                       context: context,
                                       type: AlertType.warning,
@@ -175,11 +175,11 @@ class MinicursoDetalhes extends StatelessWidget {
                                     ).show();
                                     return;
                                   }
-                                  http.put(
+                                  http.post(Uri.parse(
                                       baseUrl +
-                                          "minicursos/${minicurso.id}/cadastrar",
+                                          "minicursos/${minicurso.id}/cadastrar"),
                                       body: {
-                                        "id_participante": participante.id
+                                        "id_participante": participantes.id
                                       }).then((respostaRaw) {
                                     var resposta = jsonDecode(respostaRaw.body);
                                     if (resposta['status'] == "sucesso") {
@@ -261,10 +261,10 @@ class MinicursoDetalhes extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(30)),
                               color: Color(0xff2595A6),
                               onPressed: () {
-                                Participante.getStorage().then((participante) {
+                                Participante.getStorage().then((participantes) {
                                   http
-                                      .delete(baseUrl +
-                                          "minicursos/${minicurso.id}/liberar/${participante.id}")
+                                      .delete(Uri.parse(baseUrl +
+                                          "minicursos/${minicurso.id}/liberar/${participantes.id}"))
                                       .then((respostaRaw) {
                                     var resposta = jsonDecode(respostaRaw.body);
                                     if (resposta['status'] == "sucesso") {

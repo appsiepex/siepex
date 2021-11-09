@@ -116,3 +116,4 @@ class InfoPage extends StatelessWidget {
         ));
   }
 }
+//FUNÇÃO INFORMAÇOES UTEIS TEMPORARIAMENTE DESABILITADA PARA O DECIMO SIEPEX - EVENTO VIRTUAL

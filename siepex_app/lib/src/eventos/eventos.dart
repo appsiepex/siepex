@@ -24,10 +24,21 @@ class _EventosPageState extends State<EventosPage> {
                     fit: BoxFit.fill)),
             child: ListView(
               children: <Widget>[
-                eventoBanner('Geral', url: 'geral'),
+                //eventoBanner('Geral', url: 'geral'),
                 eventoBanner('Minicursos', url: "minicursos"),
-                eventoBanner('Visitas Técnicas', url: 'visitas'),
-                eventoBanner('Trabalhos', url: 'trabalhos'),
+                //eventoBanner('Visitas Técnicas', url: 'visitas'),
+                eventoBanner('Podcast', url: 'trabalhos'),
+                eventoBanner('Oficina/Workshop', url: 'oficina'),//BANNERS ISERIDOS
+                eventoBanner('Palestra', url: 'palestras'),
+                eventoBanner('Rodas de Coversa', url: 'rodasdeconversas'),
+                eventoBanner('Mostra', url: 'mostra'),
+                eventoBanner('Fórum', url: 'forum'),
+                eventoBanner('Seminários', url: 'seminario'),
+                eventoBanner('Teatro', url: 'teatro'),
+                eventoBanner('Vídeo Circo', url: 'videocirco'),
+                eventoBanner('Circo Dança', url: 'circodanca'),
+                eventoBanner('Dança', url: 'danca'),
+                eventoBanner('Música', url: 'musica'),
               ],
             )),
       ),
@@ -55,13 +66,15 @@ class _EventosPageState extends State<EventosPage> {
                 child: Opacity(
                     opacity: 0.7,
                     child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.black,
+                      //width: MediaQuery.of(context).size.width,
+                      //color: Colors.black,
+                      width: 400,
+                      height: 40,
                       child: Text(
                         title,
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 35,
+                          color: Colors.black,
+                          fontSize: 25,
                         ),
                         textAlign: TextAlign.center,
                       ),

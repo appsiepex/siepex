@@ -116,7 +116,7 @@ class LoginPage extends StatelessWidget {
     print(baseUrl + 'participante/$cpf/login?senha=$senha');
     try {
       var resposta = jsonDecode(
-          (await http.get(baseUrl + 'participante/$cpf/login?senha=$senha'))
+          (await http.get(Uri.parse(baseUrl + 'participante/$cpf/login?senha=$senha')))
               .body);
       if (resposta['erro'] != null) {
         Alert(

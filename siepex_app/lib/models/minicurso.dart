@@ -1,10 +1,10 @@
 class Minicurso {
   int id;
   String titulo;
-  String palestrante;
-  String inicio;
-  String fim;
-  int vagas;
+  String palestrantes;
+  String hr_inicio;
+  String hr_fim;
+  String lmt_vagas;
   String predio;
   String sala;
   String obs;
@@ -12,10 +12,10 @@ class Minicurso {
   Minicurso(
       {this.id,
       this.titulo,
-      this.palestrante,
-      this.inicio,
-      this.fim,
-      this.vagas,
+      this.palestrantes,
+      this.hr_inicio,
+      this.hr_fim,
+      this.lmt_vagas,
       this.predio,
       this.sala,
       this.obs});
@@ -23,10 +23,10 @@ class Minicurso {
   fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
     this.titulo = json['titulo'];
-    this.palestrante = json['palestrante'];
-    this.inicio = json['inicio'];
-    this.fim = json['fim'];
-    this.vagas = json['vagas'];
+    this.palestrantes = json['palestrantes'];
+    this.hr_inicio = json['hr_inicio'];
+    this.hr_fim = json['hr_fim'];
+    this.lmt_vagas = json['lmt_vagas'];
     this.predio = json['predio'];
     this.sala = json['sala'];
     this.obs = json['obs'];
@@ -37,10 +37,10 @@ class Minicurso {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['titulo'] = this.titulo;
-    data['palestrante'] = this.palestrante;
-    data['inicio'] = this.inicio;
-    data['fim'] = this.fim;
-    data['vagas'] = this.vagas;
+    data['palestrantes'] = this.palestrantes;
+    data['hr_inicio'] = this.hr_inicio;
+    data['hr_fim'] = this.hr_fim;
+    data['lmt_vagas'] = this.lmt_vagas;
     data['predio'] = this.predio;
     data['sala'] = this.sala;
     data['obs'] = this.obs;

@@ -20,7 +20,7 @@ class HandleData {
     print('pegando participantes rústica');
     try {
       var resposta =
-          jsonDecode((await http.get(baseUrl + 'obtemEquipes/rustica')).body);
+          jsonDecode((await http.get(Uri.parse(baseUrl + 'obtemEquipes/rustica'))).body);
       List<ParticipanteRustica> participantes = [];
       for (var jsonData in resposta['data']) {
         ParticipanteRustica participante = new ParticipanteRustica(jsonData);
@@ -42,7 +42,7 @@ class HandleData {
         return;
       } else {
         var resposta = jsonDecode(
-            (await http.put(baseUrl + 'equipe/cadastraRustica', body: {
+            (await http.put(Uri.parse(baseUrl + 'equipe/cadastraRustica'), body: {
           'nome': userJuergs.nome,
           'celular': userJuergs.celular,
           'cpf': userJuergs.cpf,
@@ -73,7 +73,7 @@ class HandleData {
       //   'Charset': 'utf-8'
       // };
       var resposta =
-          jsonDecode((await http.put(baseUrl + 'equipe/updateRustica', body: {
+          jsonDecode((await http.put(Uri.parse(baseUrl + 'equipe/updateRustica'), body: {
         'data': json.encode(partsJson),
       }))
               .body);

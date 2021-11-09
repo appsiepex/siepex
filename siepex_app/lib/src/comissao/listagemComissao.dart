@@ -63,7 +63,7 @@ class _ListagemComissaoState extends State<ListagemComissao> {
 
   getComissao() async {
     try {
-      var retorno = jsonDecode((await http.get(baseUrl + "comissao")).body);
+      var retorno = jsonDecode((await http.get(Uri.parse(baseUrl + "comissao"))).body);
       print(retorno);
       setState(() {
         comissao = retorno;

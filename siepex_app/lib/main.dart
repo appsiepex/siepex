@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:siepex/models/seminario.dart';
 import 'package:siepex/src/agenda/agenda.dart';
 import 'package:siepex/src/areaParticipante/alimentacao/alimentacao.dart';
 import 'package:siepex/src/areaParticipante/homeParticipante.dart';
@@ -15,6 +16,17 @@ import 'package:siepex/src/eventos/juergs/RegulamentoPage.dart';
 import 'package:siepex/src/eventos/minicursos/minicursos.dart';
 import 'package:siepex/src/eventos/trabalhos/Trabalhos.dart';
 import 'package:siepex/src/eventos/visitas/visitas.dart';
+import 'package:siepex/src/eventos/oficina/oficina.dart';
+import 'package:siepex/src/eventos/palestras/palestras.dart';
+import 'package:siepex/src/eventos/rodasdeconversas/rodas.dart';
+import 'package:siepex/src/eventos/mostra/mostra.dart';
+import 'package:siepex/src/eventos/forum/forum.dart';
+import 'package:siepex/src/eventos/seminario/seminario.dart';
+import 'package:siepex/src/eventos/videocirco/video.dart';
+import 'package:siepex/src/eventos/circodanca/circodanca.dart';
+import 'package:siepex/src/eventos/teatro/teatro.dart';
+import 'package:siepex/src/eventos/musica/musica.dart';
+import 'package:siepex/src/eventos/danca/danca.dart';
 import 'package:siepex/src/hoteis/hoteis.dart';
 import 'package:siepex/src/info/avisos.dart';
 import 'package:siepex/src/info/info.dart';
@@ -38,6 +50,8 @@ import 'package:siepex/src/eventos/juergs/equipe/PaginaEquipes.dart';
 import 'package:siepex/src/eventos/forumAreas/forumAreas.dart';
 import 'package:siepex/src/inicio/inicioSiepex.dart';
 import 'package:siepex/src/tabs/tabs.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -73,6 +87,17 @@ class MyApp extends StatelessWidget {
         "geral": (BuildContext context) => GeralPage(),
         "comissao": (BuildContext context) => ComissaoPage(),
         "trabalhos": (BuildContext context) => TrabalhosPage(),
+        "oficina": (BuildContext context) => OficinaPage(),
+        "palestras": (BuildContext context) => PalestrasPage(),
+        "rodasdeconversas": (BuildContext context) => RodasPage(),
+        "mostra": (BuildContext context) => MostraPage(),
+        "forum": (BuildContext context) => ForumEventosPage(),
+        "seminario": (BuildContext context) => SeminarioPage(),
+        "videocirco": (BuildContext context) => VideoCircoPage(),
+        "circodanca": (BuildContext context) => CircoDancaPage(),
+        "teatro": (BuildContext context) => TeatroPage(),
+        "musica": (BuildContext context) => MusicaPage(),
+        "danca": (BuildContext context) => DancaPage(),
         "juergsSobre": (BuildContext context) => JuergsSobre(),
         "forumAreas": (BuildContext context) => ForumPage(),
         "inicioSiepex": (BuildContext context) => InicioSiepex(),
@@ -91,11 +116,17 @@ class MyApp extends StatelessWidget {
         "tabelaPage": (BuildContext context) => PaginaTabela(),
         "perfilParticipante": (BuildContext context) => PerfilParticipante(),
       },
+      //Deixar em PT-BR a agenda
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [const Locale('pt', 'BR')],
       title: 'Siepex App',
 
       theme: ThemeData(
         // textSelectionColor: Colors.white
-        primaryColor: Color(0xff2595A6),
+        primaryColor: Color(0xff004422),
         textTheme: TextTheme(
           subhead: TextStyle(color: Colors.black)
         ),

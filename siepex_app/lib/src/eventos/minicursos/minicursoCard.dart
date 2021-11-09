@@ -45,7 +45,7 @@ class MinicursoCard extends StatelessWidget {
                                       image: new NetworkImage(
                                           "https://avatars1.githubusercontent.com/u/29609021?s=400&u=24a2c965697b52e2697feb03ec808aa9b1b32443&v=4")))),
                           Text(
-                            minicurso.palestrante,
+                            minicurso.palestrantes,
                             textAlign: TextAlign.center,
                           )
                         ],
@@ -57,7 +57,7 @@ class MinicursoCard extends StatelessWidget {
                         child: ListTile(
                           title: Text(minicurso.titulo),
                           subtitle: Text(
-                              '${minicurso.inicio}-${minicurso.fim}\nPredio:${minicurso.predio}/Sala:${minicurso.sala}\nVagas:${minicurso.vagas}'),
+                              '${minicurso.hr_inicio}-${minicurso.hr_fim}\nPredio:${minicurso.predio}/Sala:${minicurso.sala}\nVagas:${minicurso.lmt_vagas}'),
                         )),
                   )
                 ],

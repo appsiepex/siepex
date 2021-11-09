@@ -137,7 +137,7 @@ class Modalidade extends ChangeNotifier {
       }
 
       var resposta =
-          jsonDecode((await http.put(baseUrl + 'modalidades/nextFase', body: {
+          jsonDecode((await http.put(Uri.parse(baseUrl + 'modalidades/nextFase'), body: {
         'id_modalidade': id.toString(),
         'fase_atual': fase.toString(),
         'idEquipes': idEquipes.toString(),
@@ -173,8 +173,8 @@ class Modalidade extends ChangeNotifier {
 
   Future changeLocal(BuildContext context, String novoLocal) async {
     try {
-      var resposta = jsonDecode((await http.put(
-              baseUrl + 'modalidades/changeLocal',
+      var resposta = jsonDecode((await http.put(Uri.parse(
+              baseUrl + 'modalidades/changeLocal'),
               body: {'id_modalidade': id.toString(), 'novo_local': novoLocal}))
           .body);
 
@@ -193,8 +193,8 @@ class Modalidade extends ChangeNotifier {
 
   static Future<List<Modalidade>> getModalidades() async {
     try {
-      var resposta = jsonDecode((await http.put(
-        baseUrl + 'modalidades/getAll',
+      var resposta = jsonDecode((await http.put(Uri.parse(
+        baseUrl + 'modalidades/getAll'),
       ))
           .body);
       List<Modalidade> listaModalidade = new List<Modalidade>();
@@ -220,7 +220,7 @@ class Modalidade extends ChangeNotifier {
     try {
       if (novoFormato != _formatoCompeticao) {
         var resposta = jsonDecode(
-            (await http.put(baseUrl + 'modalidades/alterarFormato', body: {
+            (await http.put(Uri.parse(baseUrl + 'modalidades/alterarFormato'), body: {
           'id_modalidade': id.toString(),
           'novo_formato': novoFormato.toString(),
         }))

@@ -305,7 +305,7 @@ class _CadastraParticipanteState extends State<CadastraParticipante> {
         _loading = true;
       });
       var resposta =
-          jsonDecode((await http.put(baseUrl + 'cadastroJuergs/', body: {
+          jsonDecode((await http.put(Uri.parse(baseUrl + 'cadastroJuergs/'), body: {
         'nome': estudante.nome,
         'cpf': estudante.cpf,
         'email': estudante.email,

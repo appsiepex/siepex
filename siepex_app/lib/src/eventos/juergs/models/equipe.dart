@@ -79,7 +79,7 @@ class Equipe extends ChangeNotifier {
       }
       isLoading = true;
       notifyListeners();
-      var resposta = jsonDecode((await http.put(baseUrl + 'equipe/entra',
+      var resposta = jsonDecode((await http.put(Uri.parse(baseUrl + 'equipe/entra'),
               body: {'user_cpf': userJuergs.cpf, 'equipe_id': id.toString(), 'user_name':userJuergs.nome}))
           .body);
 
@@ -100,7 +100,7 @@ class Equipe extends ChangeNotifier {
     try {
       if (newName != nome) {
         var resposta =
-            jsonDecode((await http.put(baseUrl + 'equipe/changeName', body: {
+            jsonDecode((await http.put(Uri.parse(baseUrl + 'equipe/changeName'), body: {
           'id_modalidade': idModalidade.toString(),
           'nome_modalidade': nomeModalidade,
           'nome_equipe': newName,
@@ -127,7 +127,7 @@ class Equipe extends ChangeNotifier {
       isLoading = true;
       notifyListeners();
       var resposta =
-          jsonDecode((await http.put(baseUrl + 'equipe/changeCaptain', body: {
+          jsonDecode((await http.put(Uri.parse(baseUrl + 'equipe/changeCaptain'), body: {
         'newcap_cpf': newCap.cpf,
         'equipe_id': id.toString(),
       }))
@@ -151,7 +151,7 @@ class Equipe extends ChangeNotifier {
       isLoading = true;
       notifyListeners();
       var resposta =
-          jsonDecode((await http.put(baseUrl + 'equipe/remove', body: {
+          jsonDecode((await http.put(Uri.parse(baseUrl + 'equipe/remove'), body: {
         'equipe_id': id.toString(),
       }))
               .body);
@@ -177,7 +177,7 @@ class Equipe extends ChangeNotifier {
       isLoading = true;
       notifyListeners();
       var resposta =
-          jsonDecode((await http.put(baseUrl + 'equipe/excludeMembers', body: {
+          jsonDecode((await http.put(Uri.parse(baseUrl + 'equipe/excludeMembers'), body: {
         'equipe_id': id.toString(),
         'members_cpf': json.encode(membersCpf),
       }))
@@ -202,7 +202,7 @@ class Equipe extends ChangeNotifier {
   // Pega as equipes registradas para a modalidade.
   static Future<List<Equipe>> getEquipesPorModalidade(int idModalidade) async {
     try {
-      var resposta = jsonDecode((await http.put(baseUrl + 'obtemEquipes/porModalidade',
+      var resposta = jsonDecode((await http.put(Uri.parse(baseUrl + 'obtemEquipes/porModalidade'),
               body: {
             'id_modalidade': idModalidade.toString(),
           }))
@@ -227,7 +227,7 @@ class Equipe extends ChangeNotifier {
 
   static Future<List<Equipe>> getEquipesPorFase(int idModalidade, int faseAtual) async {
     try {
-      var resposta = jsonDecode((await http.put(baseUrl + 'obtemEquipes/porFase',
+      var resposta = jsonDecode((await http.put(Uri.parse(baseUrl + 'obtemEquipes/porFase'),
               body: {
             'id_modalidade': idModalidade.toString(),
             'fase_atual': faseAtual.toString()
@@ -254,7 +254,7 @@ class Equipe extends ChangeNotifier {
   static Future<List<Equipe>> getMyEquipes(String userCpf) async {
     try {
       var resposta = jsonDecode((await http
-              .put(baseUrl + 'obtemEquipes/porUser', body: {'user_cpf': userCpf}))
+              .put(Uri.parse(baseUrl + 'obtemEquipes/porUser'), body: {'user_cpf': userCpf}))
           .body);
       if (resposta['status'] == 'sucesso'){
         List<Equipe> equipesList = new List<Equipe>();
@@ -287,7 +287,7 @@ class Equipe extends ChangeNotifier {
       }
       if (nomeEquipe.isNotEmpty) {
         var resposta =
-            jsonDecode((await http.put(baseUrl + 'equipe/cadastra', body: {
+            jsonDecode((await http.put(Uri.parse(baseUrl + 'equipe/cadastra'), body: {
           'id_modalidade': modalidade.id.toString(),
           'nome_equipe': nomeEquipe,
           'nome_modalidade': modalidade.nome,

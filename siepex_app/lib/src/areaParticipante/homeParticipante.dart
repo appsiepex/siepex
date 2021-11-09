@@ -62,10 +62,10 @@ class HomeParticipanteState extends State<HomeParticipante>
     return Drawer(
       child: Container(
           decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                      'assets/img/arte_uergs/Background_App_Siepex.png'),
-                  fit: BoxFit.fill)),
+              /*image: DecorationImage(
+                  /*image: AssetImage(
+                      'assets/img/arte_uergs/Background_App_Siepex.png'),*/
+                  fit: BoxFit.fill)*/),
           child: Column(
             children: <Widget>[
               UserAccountsDrawerHeader(
@@ -75,13 +75,13 @@ class HomeParticipanteState extends State<HomeParticipante>
                   backgroundImage: new NetworkImage(
                       'https://avatars1.githubusercontent.com/u/29609021?s=400&u=24a2c965697b52e2697feb03ec808aa9b1b32443&v=4'),
                 ),
-                decoration: BoxDecoration(
+                /*decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
                   Color(0xff249FAB),
                   Color(0xff2E4D89),
                   Color(0xff704989),
                   Color(0xffEAA074)
-                ])),
+                ])),*/
                 margin: EdgeInsets.zero,
                 onDetailsPressed: () {
                   _showDrawerContents = !_showDrawerContents;

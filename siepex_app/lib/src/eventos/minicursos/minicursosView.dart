@@ -21,7 +21,7 @@ class _ListagemMinicursosState extends State<ListagemMinicursos> {
   getTodosMinicursos() async {
     try {
       var minicursos =
-          jsonDecode((await http.get(baseUrl + "minicursos")).body);
+          jsonDecode((await http.get(Uri.parse(baseUrl + "minicursos"))).body);
       print(minicursos);
       setState(() {
         viewMinicursos = minicursos;
@@ -39,7 +39,7 @@ class _ListagemMinicursosState extends State<ListagemMinicursos> {
     Participante.getStorage().then((user) async {
       try {
         var minicursos = jsonDecode(
-            (await http.get(baseUrl + "participante/${user.id}/minicursos"))
+            (await http.get(Uri.parse(baseUrl + "participante/${user.id}/minicursos")))
                 .body);
         setState(() {
           print(minicursos);
@@ -86,9 +86,9 @@ class _ListagemMinicursosState extends State<ListagemMinicursos> {
       List<Widget> widgetMinicursos = [];
       String inicio = '0';
       viewMinicursos.forEach((minicurso) {
-        if (minicurso['inicio'] != inicio) {
-          widgetMinicursos.add(linhaHora(hora: minicurso['inicio']));
-          inicio = minicurso['inicio'];
+        if (minicurso['hr_inicio'] != inicio) {
+          widgetMinicursos.add(linhaHora(hora: minicurso['hr_inicio']));
+          inicio = minicurso['hr_inicio'];
         }
         widgetMinicursos.add(MinicursoCard(
           minicurso: Minicurso().fromJson(minicurso),

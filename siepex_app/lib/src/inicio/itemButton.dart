@@ -24,10 +24,10 @@ Widget itemButton(GridItem item, BuildContext context,
         padding: EdgeInsets.all(3),
         decoration: BoxDecoration(
             boxShadow: [
-              BoxShadow(color: Colors.black54, spreadRadius: 0.8, blurRadius: 2)
+              BoxShadow(color: Color(0xFF006133), spreadRadius: 0.8, blurRadius: 2)
             ],
             // border: Border.all(color: Colors.black),
-            color: Color(0xff249FAB),
+            color: Color(613300),
             borderRadius: BorderRadius.circular(20)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +80,7 @@ Widget itemButtonPersonalizado(GridItem item, BuildContext context,
             boxShadow: [
               BoxShadow(color: Colors.black54, spreadRadius: 0.8, blurRadius: 2)
             ],
-            color: Color(0xff249FAB),
+            color: Color(613300),
             borderRadius: BorderRadius.circular(20)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

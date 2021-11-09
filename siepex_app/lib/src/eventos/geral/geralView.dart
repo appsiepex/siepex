@@ -20,7 +20,7 @@ class _ListagemGeralState extends State<ListagemGeral> {
   bool carregou = false;
   getGeral() async {
     try {
-      var geral = jsonDecode((await http.get(baseUrl + "geral")).body);
+      var geral = jsonDecode((await http.get(Uri.parse(baseUrl + "geral"))).body);
       // print(geral);
       setState(() {
         viewGeral = geral;
